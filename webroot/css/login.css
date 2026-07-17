@@ -1,0 +1,211 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: #1f2937;
+}
+
+/* Whole Page */
+
+.page-container {
+    min-height: 100vh;
+
+    display: flex;
+
+    flex-direction: column;
+}
+
+/* Header */
+
+.main-header {
+    height: 90px;
+
+    background: white;
+
+    display: flex;
+
+    align-items: center;
+
+    padding-left: 30px;
+}
+
+.header-content {
+    display: flex;
+
+    align-items: center;
+}
+
+.school-logo {
+    width: 55px;
+
+    height: 55px;
+
+    object-fit: contain;
+
+    margin-right: 15px;
+}
+
+.school-title h1 {
+    margin: 0;
+
+    font-size: 24px;
+
+    font-weight: 700;
+}
+
+.school-title p {
+    margin: 5px 0 0;
+
+    color: #009b3a;
+
+    font-size: 16px;
+}
+
+/* Login Background */
+
+.login-section {
+    flex: 1;
+
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.55), rgba(255, 255, 255, 0.55)),
+        url("../img/bg.jpg");
+
+    background-size: cover;
+
+    background-position: center;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+}
+
+/* Login Box */
+
+.login-card {
+    background: white;
+
+    width: 520px;
+
+    padding: 40px;
+
+    border-radius: 20px;
+
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Footer */
+
+.main-footer {
+    height: 70px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: white;
+
+    color: #6b7280;
+}
+
+/* Login Form */
+
+.login-container h2 {
+    text-align: center;
+
+    margin-bottom: 10px;
+
+    color: #006b3f;
+
+    font-size: 28px;
+}
+
+.login-description {
+    text-align: center;
+
+    color: #6b7280;
+
+    margin-bottom: 30px;
+
+    font-size: 14px;
+}
+
+/* Form Groups */
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+/* Labels */
+
+.form-group label {
+    display: block;
+
+    margin-bottom: 8px;
+
+    font-weight: 600;
+
+    color: #374151;
+}
+
+/* Input Fields */
+
+.form-group input {
+    width: 100%;
+
+    padding: 12px 15px;
+
+    border: 1px solid #d1d5db;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    outline: none;
+
+    transition: 0.3s;
+}
+
+/* Input Focus */
+
+.form-group input:focus {
+    border-color: #009b3a;
+
+    box-shadow: 0 0 0 3px rgba(0, 155, 58, 0.15);
+}
+
+/* Login Button */
+
+.login-button button {
+    width: 100%;
+
+    padding: 13px;
+
+    background: #009b3a;
+
+    color: white;
+
+    border: none;
+
+    border-radius: 10px;
+
+    font-size: 16px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.login-button button:hover {
+    background: #007a2d;
+}

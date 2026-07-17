@@ -1,0 +1,133 @@
+#############################
+# CakePHP
+#############################
+
+# Local configuration
+/config/app_local.php
+/config/.env
+
+# Logs
+/logs/*
+!/logs/.gitkeep
+
+# Temporary files
+/tmp/*
+!/tmp/.gitkeep
+!/tmp/cache/
+!/tmp/cache/.gitkeep
+!/tmp/sessions/
+!/tmp/sessions/.gitkeep
+!/tmp/tests/
+!/tmp/tests/.gitkeep
+
+# Cache contents
+/tmp/cache/*
+!/tmp/cache/.gitkeep
+
+# Sessions
+/tmp/sessions/*
+!/tmp/sessions/.gitkeep
+
+# Test files
+/tmp/tests/*
+!/tmp/tests/.gitkeep
+
+# Composer dependencies
+/vendor/
+
+#############################
+# Composer
+#############################
+
+# Keep these tracked:
+# composer.json
+# composer.lock
+
+#############################
+# Environment
+#############################
+
+.env
+.env.*
+
+#############################
+# Node
+#############################
+
+/node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+#############################
+# IDEs & Editors
+#############################
+
+# Visual Studio Code
+.vscode/
+
+# JetBrains (PhpStorm, IntelliJ)
+.idea/
+
+# NetBeans
+nbproject/
+
+# Eclipse
+.settings/
+
+# Nova
+.nova/
+
+# Sublime Text
+*.sublime-*
+*.stTheme.cache
+*.tmlanguage.cache
+*.tmPreferences.cache
+
+# Vim
+*.swp
+*.swo
+*~
+
+#############################
+# PHPUnit
+#############################
+
+.phpunit.cache
+tests.sqlite
+
+#############################
+# OS Files
+#############################
+
+# macOS
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Icon?
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
+#############################
+# Misc
+#############################
+
+*.log
+*.cache
+*.tmp
+*.bak
+*.old
+
+#############################
+# Generated Assets (Optional)
+#############################
+
+# Uncomment if your project generates these
+# /webroot/js/*.map
+# /webroot/css/*.map
