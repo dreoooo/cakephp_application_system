@@ -23,17 +23,17 @@ class ScholarshipsController extends AppController
     }
 
     /**
-     * Student Scholarship Listing
+     * Scholarship Listing
      */
     public function index()
     {
         $query = $this->Scholarships
             ->find()
             ->where([
-                'Scholarships.status' => 'Open'
+                'Scholarships.status' => 'Open',
             ])
             ->orderBy([
-                'Scholarships.scholarship_name' => 'ASC'
+                'Scholarships.scholarship_name' => 'ASC',
             ]);
 
         $scholarships = $this->paginate($query);
@@ -46,11 +46,10 @@ class ScholarshipsController extends AppController
      */
     public function view($id = null)
     {
-        $scholarship = $this->Scholarships->get($id, contain: [
-            'ScholarshipRequirements' => [
-                'Requirements'
-            ]
-        ]);
+        $scholarship = $this->Scholarships->get(
+            $id,
+            contain: ['Requirements']
+        );
 
         $this->set(compact('scholarship'));
     }
@@ -66,7 +65,10 @@ class ScholarshipsController extends AppController
 
             $scholarship = $this->Scholarships->patchEntity(
                 $scholarship,
-                $this->request->getData()
+                $this->request->getData(),
+                [
+                    'associated' => ['Requirements'],
+                ]
             );
 
             if ($this->Scholarships->save($scholarship)) {
@@ -79,7 +81,18 @@ class ScholarshipsController extends AppController
             $this->Flash->error('The scholarship could not be saved.');
         }
 
-        $this->set(compact('scholarship'));
+        $requirements = $this->Scholarships
+            ->Requirements
+            ->find('list')
+            ->orderBy([
+                'Requirements.requirement_name' => 'ASC',
+            ])
+            ->all();
+
+        $this->set(compact(
+            'scholarship',
+            'requirements'
+        ));
     }
 
     /**
@@ -87,13 +100,19 @@ class ScholarshipsController extends AppController
      */
     public function edit($id = null)
     {
-        $scholarship = $this->Scholarships->get($id);
+        $scholarship = $this->Scholarships->get(
+            $id,
+            contain: ['Requirements']
+        );
 
         if ($this->request->is(['patch', 'post', 'put'])) {
 
             $scholarship = $this->Scholarships->patchEntity(
                 $scholarship,
-                $this->request->getData()
+                $this->request->getData(),
+                [
+                    'associated' => ['Requirements'],
+                ]
             );
 
             if ($this->Scholarships->save($scholarship)) {
@@ -106,7 +125,18 @@ class ScholarshipsController extends AppController
             $this->Flash->error('The scholarship could not be updated.');
         }
 
-        $this->set(compact('scholarship'));
+        $requirements = $this->Scholarships
+            ->Requirements
+            ->find('list')
+            ->orderBy([
+                'Requirements.requirement_name' => 'ASC',
+            ])
+            ->all();
+
+        $this->set(compact(
+            'scholarship',
+            'requirements'
+        ));
     }
 
     /**
